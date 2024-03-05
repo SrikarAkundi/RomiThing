@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.commands.Romi;
 import frc.robot.commands.Romii;
+import frc.robot.commands.SpeakerAlign;
 import frc.robot.commands.romiturny;
 import frc.robot.commands.RomiMovey;
 import frc.robot.commands.callcameraresult;
@@ -48,6 +49,7 @@ public class RobotContainer {
   // private final Romi Romik = new Romi(m_drivetrain);
   private final AutonomousDistance Divey = new AutonomousDistance(m_drivetrain);
   private final callcameraresult look = new callcameraresult(m_drivetrain, proto);
+  private final SpeakerAlign spek = new SpeakerAlign(m_drivetrain);
   public static final byte BNO055_ADDRESS_A = 0x28;
   // I2CBus i2c = I2CFactory.getInstance(I2CBus.BUS_1);
   // I2CDevice device = i2c.getDevice(MCP23017_ADDRESS);
@@ -109,7 +111,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // return BNO055;
-    return look;
+    return spek;
   }
 
   /**
